@@ -1,0 +1,50 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: "Inter Tight", sans-serif;
+    text-decoration: none;
+    list-style: none;
+    color: white;
+}
+
+body {
+    background-color: black; /* TODO: Remove once configured the real background */
+}
+
+header {
+    background-color: transparent;
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px 3%;
+}
+
+.logo {
+    font-size: 30px;
+    font-weight: 800;
+}
+
+.navigation-list {
+    display: flex;
+}
+
+.navigation-list a {
+    margin-left: 60px;
+    font-size: 15px;
+    font-weight: 600;
+    border-bottom: 2px solid transparent;
+    transition: border-bottom-color 0.5s ease;
+}
+
+.navigation-list a:hover {
+    border-bottom-color: white;
+}
+
+#menu-icon {
+    display: none;
+}
