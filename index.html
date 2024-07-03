@@ -25,25 +25,54 @@
 <body>
 
     <header>
-        <a class="logo" href="#">JDEV128</a>
+        <a class="logo" href="#">JDev128</a>
 
-        <div id="menu-icon">
-            <input type="checkbox" name="visible-menu" id="visible-menu">
-            <label for="visible-menu">
-                <div class='bx bx-menu'></div>
-            </label>
-        </div>
+        <input type="checkbox" name="toggle-menu" id="toggle-menu">
+        <label id="menu-icon" for="toggle-menu">
+            <div class='bx bx-menu'></div>
+        </label>
 
-        <nav>
-            <ul class="navigation-list">
+        <nav id="navigation-list">
+            <ul>
                 <li><a href="#">Inicio</a></li>
                 <li><a href="#">Sobre mi</a></li>
                 <li><a href="#">Portafolio</a></li>
                 <li><a href="#">Contacto</a></li>
             </ul>
         </nav>
+
     </header>
-    
+
+    <input type="checkbox" name="toggle-network" id="toggle-network">
+    <aside class="social-media-bar">
+        <nav>
+            <ul>
+                <li><a target="_blank" href="https://www.linkedin.com/in/mauricio-pisco/"><i class="ri-linkedin-box-fill"></i></a></li>
+                <li><a target="_blank" href="https://x.com/MauricioPisco"><i class="ri-twitter-x-line"></i></a></li>
+                <li><a target="_blank" href="https://github.com/jdev128"><i class="ri-github-fill"></i></a></li>
+            </ul>
+        </nav>
+    </aside>
+
+    <main>
+        <section class="hero">
+            <div class="hero-text">
+                <h4>Frontend Developer</h4>
+                <h1>Mauricio Pisco</h1>
+                <p>Más de cuatro años aportando valor a la vertical de seguros de salud
+                    a través del foco en la calidad y la mejora continua.
+                </p>
+                <a target="_blank" href="https://jdev128.github.io/web-cv/">Conocé mi trayectoria</a>
+            </div>
+            <div class="hero-img">
+                <img src="assets/images/thinking-pic.jpg" alt="Mauricio Pisco Photo">
+            </div>
+        </section>
+        <label id="network-button" for="toggle-network">
+            <i class="ri-global-line"></i>
+        </label>
+    </main>
+
 </body>
 
 </html>

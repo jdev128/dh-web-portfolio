@@ -9,15 +9,18 @@
 }
 
 body {
-    background-color: black; /* TODO: Remove once configured the real background */
+    background: rgb(0, 0, 0);
+    background: linear-gradient(39deg, rgba(0, 0, 0, 1) 0%, rgba(0, 73, 68, 1) 53%);
 }
 
 header {
-    background-color: transparent;
+    background: rgb(0, 0, 0);
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0.8) 30%, rgba(0, 0, 0, 0.5) 60%, rgba(0, 0, 0, 0) 100%);
     position: fixed;
     top: 0;
     right: 0;
     width: 100%;
+    z-index: 20;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -29,22 +32,217 @@ header {
     font-weight: 800;
 }
 
-.navigation-list {
+#navigation-list ul {
     display: flex;
 }
 
-.navigation-list a {
-    margin-left: 60px;
+#navigation-list a {
+    margin-left: 8vw;
     font-size: 15px;
     font-weight: 600;
     border-bottom: 2px solid transparent;
     transition: border-bottom-color 0.5s ease;
 }
 
-.navigation-list a:hover {
+#navigation-list a:hover {
     border-bottom-color: white;
 }
 
 #menu-icon {
     display: none;
+    cursor: pointer;
+    z-index: 30;
+    font-size: 40px;
+    transition: all 0.5s ease;
+}
+
+#menu-icon:hover {
+    transform: scale(1.1);
+}
+
+#toggle-menu {
+    display: none;
+}
+
+.hero {
+    min-height: 100vh;
+    padding: 0 8vw;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr;
+    align-items: center;
+    gap: 2rem;
+}
+
+.hero-text h4 {
+    font-size: 1.4rem;
+    font-weight: 500;
+}
+
+.hero-text h1 {
+    font-size: 2.8rem;
+    margin-bottom: 30px;
+}
+
+.hero-text p {
+    font-size: 80%;
+    margin-bottom: 30px;
+}
+
+.hero-text a {
+    display: inline-block;
+    font-size: 0.6rem;
+    font-weight: 500;
+    background-color: rgba(0, 0, 0, 0.6);
+    border: 1px solid transparent;
+    padding: 10px 15px;
+    border-radius: 30px;
+    text-transform: uppercase;
+    transition: all .5s ease;
+}
+
+.hero-text a:hover {
+    background-color: transparent;
+    border: 1px solid white;
+    transform: translateX(8px);
+}
+
+.hero-img img {
+    display: block;
+    margin: auto;
+    width: 26vw;
+    border: 8px solid rgb(0, 53, 49);
+    border-radius: 50%;
+    transition-property: transform, opacity;
+    transition-timing-function: ease;
+    transition-duration: 3s;
+}
+
+.hero-img img:hover {
+    transform: scale(1.2);
+    opacity: 0.8;
+}
+
+.social-media-bar ul {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    width: 8vw;
+    height: 100%;
+}
+
+.social-media-bar li {
+    font-size: 20px;
+    margin: 20px auto;
+}
+
+.social-media-bar i {
+    display: inline-block;
+    transition: all 0.5s ease;
+}
+
+.social-media-bar i:hover {
+    transform: translateY(-3px);
+    color: rgb(84, 84, 84);
+}
+
+#network-button {
+    display: none;
+    width: 60px;
+    height: 60px;
+    background-color: rgba(0, 0, 0, 0.6);
+    border-radius: 50%;
+    z-index: 30;
+    position: fixed;
+    bottom: 3vw;
+    right: 3vw;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: transform 0.5s ease;
+}
+
+#network-button:hover {
+    transform: translateY(-5px);
+}
+
+#toggle-network {
+    display: none;
+}
+
+@media screen and (max-width: 576px) {
+
+    #navigation-list {
+        position: absolute;
+        background: rgb(0,0,0);
+        background: radial-gradient(circle, rgba(0,0,0,1) 0%, rgba(0,0,0,0.7) 100%);
+        width: 70vw;
+        top: 60px;
+        transition: right 0.5s ease;
+        right: -100%;
+        border-radius: 10px;
+    }
+    
+    #navigation-list ul {
+        min-height: 50vh;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    #navigation-list a {
+        display: inline-block;
+        margin: 15px 0;
+    }
+
+    #menu-icon {
+        display: block;
+    }
+
+    #toggle-menu:checked+#menu-icon+#navigation-list {
+        right: 10px;
+    }
+
+    .social-media-bar ul {
+        flex-direction: row;
+        background: rgb(0,0,0);
+        background: radial-gradient(circle, rgba(0,0,0,1) 0%, rgba(0,0,0,0.7) 100%);
+        width: 50vw;
+        height: 60px;
+        border-radius: 10px;
+        position: fixed;
+        bottom: -100%;
+        transition: bottom 0.5s ease;
+        right: 10px;
+        z-index: 30;
+    }
+
+    #network-button {
+        display: inline-flex;
+    }
+
+    #toggle-network:checked + aside.social-media-bar ul {
+        bottom: 90px;
+    }
+
+    .hero {
+        padding: 0 3vw;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 0;
+    }
+
+    .hero-text {
+        order: 1;
+        margin-bottom: 20vw;
+    }
+
+    .hero-img img {
+        margin: 20vw auto;
+        width: 70vw;
+    }
+
 }
