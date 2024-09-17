@@ -20,6 +20,9 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet"
         href="https://fonts.googleapis.com/css2?family=Glory:wght@100..800&family=Inter+Tight:ital,wght@0,100..900;1,100..900&display=swap">
+
+    <script src="https://unpkg.com/scrollreveal@4.0.0/dist/scrollreveal.min.js"></script>
+    <script defer src="script.js"></script>
 </head>
 
 <body>
@@ -27,10 +30,7 @@
     <header>
         <a class="logo" href="#">JDev128</a>
 
-        <input type="checkbox" name="toggle-menu" id="toggle-menu">
-        <label id="menu-icon" for="toggle-menu">
-            <div class='bx bx-menu'></div>
-        </label>
+        <div id="toggle-menu" class='bx bx-menu'></div>
 
         <nav id="navigation-list">
             <ul>
@@ -43,7 +43,6 @@
 
     </header>
 
-    <input type="checkbox" name="toggle-network" id="toggle-network">
     <aside class="social-media-bar">
         <nav>
             <ul>
@@ -59,7 +58,7 @@
             <div class="hero-text">
                 <h4>Frontend Developer</h4>
                 <h1>Mauricio Pisco</h1>
-                <p>Más de cuatro años aportando valor a la vertical de seguros de salud
+                <p>Más de cinco años aportando valor a la vertical de seguros de salud
                     a través del foco en la calidad y la mejora continua.
                 </p>
                 <a target="_blank" href="https://jdev128.github.io/web-cv/">Conocé mi trayectoria</a>
@@ -68,9 +67,9 @@
                 <img src="assets/images/thinking-pic.jpg" alt="Mauricio Pisco Photo">
             </div>
         </section>
-        <label id="network-button" for="toggle-network">
+        <div id="toggle-social-bar">
             <i class="ri-global-line"></i>
-        </label>
+        </div>
     </main>
 
 </body>
