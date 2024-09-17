@@ -48,7 +48,7 @@ header {
     border-bottom-color: white;
 }
 
-#menu-icon {
+#toggle-menu {
     display: none;
     cursor: pointer;
     z-index: 30;
@@ -56,22 +56,18 @@ header {
     transition: all 0.5s ease;
 }
 
-#menu-icon:hover {
+#toggle-menu:hover {
     transform: scale(1.1);
-}
-
-#toggle-menu {
-    display: none;
 }
 
 .hero {
     min-height: 100vh;
-    padding: 0 8vw;
+    padding: 0 15vw;
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr;
     align-items: center;
-    gap: 2rem;
+    gap: 6rem;
 }
 
 .hero-text h4 {
@@ -119,7 +115,7 @@ header {
 }
 
 .hero-img img:hover {
-    transform: scale(1.2);
+    transform: scale(1.1);
     opacity: 0.8;
 }
 
@@ -129,7 +125,7 @@ header {
     align-items: center;
     justify-content: center;
     position: absolute;
-    width: 8vw;
+    width: 15vw;
     height: 100%;
 }
 
@@ -148,7 +144,7 @@ header {
     color: rgb(84, 84, 84);
 }
 
-#network-button {
+#toggle-social-bar {
     display: none;
     width: 60px;
     height: 60px;
@@ -164,15 +160,24 @@ header {
     transition: transform 0.5s ease;
 }
 
-#network-button:hover {
+#toggle-social-bar:hover {
     transform: translateY(-5px);
 }
 
-#toggle-network {
-    display: none;
+html.sr {
+    overflow: hidden;
+}
+
+html.sr .hero-img,
+html.sr .hero-text {
+    visibility: hidden;
 }
 
 @media screen and (max-width: 576px) {
+
+    html.sr {
+        overflow-y: auto;
+    }
 
     #navigation-list {
         position: absolute;
@@ -197,12 +202,8 @@ header {
         margin: 15px 0;
     }
 
-    #menu-icon {
+    #toggle-menu {
         display: block;
-    }
-
-    #toggle-menu:checked+#menu-icon+#navigation-list {
-        right: 10px;
     }
 
     .social-media-bar ul {
@@ -219,12 +220,8 @@ header {
         z-index: 30;
     }
 
-    #network-button {
+    #toggle-social-bar {
         display: inline-flex;
-    }
-
-    #toggle-network:checked + aside.social-media-bar ul {
-        bottom: 90px;
     }
 
     .hero {
