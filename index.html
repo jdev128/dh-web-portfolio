@@ -1,77 +1,115 @@
 <!DOCTYPE html>
 <html lang="es">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Mauricio Pisco | Inicio</title>
 
-    <title>Mauricio Pisco</title>
+		<link rel="stylesheet" href="./styles.css" />
 
-    <link rel="stylesheet" href="./styles.css">
+		<!-- https://boxicons.com/ -->
+		<link
+			rel="stylesheet"
+			href="https://unpkg.com/boxicons@latest/css/boxicons.min.css"
+		/>
 
-    <!-- https://boxicons.com/ -->
-    <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
+		<!-- https://remixicon.com/ -->
+		<link
+			href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css"
+			rel="stylesheet"
+		/>
 
-    <!-- https://remixicon.com/ -->
-    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css" rel="stylesheet" />
+		<!-- https://fonts.google.com/ -->
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			rel="stylesheet"
+			href="https://fonts.googleapis.com/css2?family=Glory:wght@100..800&family=Inter+Tight:ital,wght@0,100..900;1,100..900&display=swap"
+		/>
 
-    <!-- https://fonts.google.com/ -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="stylesheet"
-        href="https://fonts.googleapis.com/css2?family=Glory:wght@100..800&family=Inter+Tight:ital,wght@0,100..900;1,100..900&display=swap">
+		<!-- scroll reveal -->
+		<script src="https://unpkg.com/scrollreveal@4.0.0/dist/scrollreveal.min.js"></script>
+		<script defer src="script.js" type="module"></script>
+	</head>
 
-    <script src="https://unpkg.com/scrollreveal@4.0.0/dist/scrollreveal.min.js"></script>
-    <script defer src="script.js"></script>
-</head>
+	<body>
+		<header>
+			<p class="logo">jDev128</p>
 
-<body>
+			<div id="toggle-menu" class="bx bx-menu"></div>
 
-    <header>
-        <a class="logo" href="#">JDev128</a>
+			<nav id="navigation-list">
+				<ul>
+					<li>Herramientas y habilidades</li>
+					<li>Ultimos proyectos</li>
+				</ul>
+			</nav>
+		</header>
 
-        <div id="toggle-menu" class='bx bx-menu'></div>
+		<main>
 
-        <nav id="navigation-list">
-            <ul>
-                <li><a href="#">Inicio</a></li>
-                <li><a href="#">Sobre mi</a></li>
-                <li><a href="#">Portafolio</a></li>
-                <li><a href="#">Contacto</a></li>
-            </ul>
-        </nav>
+			<aside class="social-media-bar">
+				<nav>
+					<ul>
+						<li>
+							<a
+								target="_blank"
+								href="https://www.linkedin.com/in/mauricio-pisco/"
+								><i class="ri-linkedin-box-fill"></i
+							></a>
+						</li>
+						<li>
+							<a
+								target="_blank"
+								href="https://x.com/MauricioPisco"
+								><i class="ri-twitter-x-line"></i
+							></a>
+						</li>
+						<li>
+							<a target="_blank" href="https://github.com/jdev128"
+								><i class="ri-github-fill"></i
+							></a>
+						</li>
+					</ul>
+				</nav>
+			</aside>
 
-    </header>
+<!-- 			<section class="hero">
+				<div class="hero-text">
+					<h4>Frontend Developer</h4>
+					<h1>Mauricio Pisco</h1>
+					<p>
+						Con alma emprendedora y curioso por naturaleza, busco
+						continuamente nuevas formas de resolver problemas con
+						las herramientas que integro de forma cotidiana,
+						enfocándome en empatizar con el usuario para crear
+						soluciones digitales que le aporten un valor real.
+					</p>
+					<a target="_blank" href="https://jdev128.github.io/web-cv/"
+						>Conocé mi trayectoria</a
+					>
+				</div>
+				<div class="hero-img">
+					<img
+						src="assets/images/confident-pic-2.jpg"
+						alt="Mauricio Pisco Photo"
+					/>
+				</div>
+			</section> -->
 
-    <aside class="social-media-bar">
-        <nav>
-            <ul>
-                <li><a target="_blank" href="https://www.linkedin.com/in/mauricio-pisco/"><i class="ri-linkedin-box-fill"></i></a></li>
-                <li><a target="_blank" href="https://x.com/MauricioPisco"><i class="ri-twitter-x-line"></i></a></li>
-                <li><a target="_blank" href="https://github.com/jdev128"><i class="ri-github-fill"></i></a></li>
-            </ul>
-        </nav>
-    </aside>
+			<section id="tools-and-skills">
+				<div id="tools" class="container">
+					<h4>Mis herramientas</h4>
+				</div>
+				<div id="skills" class="container">
+					<h4>Mis habilidades</h4>
+				</div>
+			</section>
 
-    <main>
-        <section class="hero">
-            <div class="hero-text">
-                <h4>Frontend Developer</h4>
-                <h1>Mauricio Pisco</h1>
-                <p>Más de cinco años aportando valor a la vertical de seguros de salud
-                    a través del foco en la calidad y la mejora continua.
-                </p>
-                <a target="_blank" href="https://jdev128.github.io/web-cv/">Conocé mi trayectoria</a>
-            </div>
-            <div class="hero-img">
-                <img src="assets/images/thinking-pic.jpg" alt="Mauricio Pisco Photo">
-            </div>
-        </section>
-        <div id="toggle-social-bar">
-            <i class="ri-global-line"></i>
-        </div>
-    </main>
-
-</body>
-
+			<div id="toggle-social-bar">
+				<i class="ri-global-line"></i>
+			</div>
+		</main>
+	</body>
 </html>
