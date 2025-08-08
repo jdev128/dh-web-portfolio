@@ -8,29 +8,44 @@ const MENU = document.getElementById("navigation-list");
 const TOGGLE_SOCIAL_BAR = document.getElementById("toggle-social-bar");
 const SOCIAL_BAR = document.querySelector("aside.social-media-bar ul");
 
+const closeMenu = () => {
+	if (!TOGGLE_MENU.classList.contains("bx-x")) {
+		return;
+	}
+	MENU.style.right = "-100%";
+	TOGGLE_MENU.classList.remove("bx-x");
+	TOGGLE_MENU.classList.add("bx-menu");
+}
+
 const toggleMenu = () => {
-	MENU.style.right = MENU.style.right !== "1rem" ? "1rem" : "-100%";
+	MENU.style.right = TOGGLE_MENU.classList.contains("bx-menu") ? "1rem" : "-100%";
 	TOGGLE_MENU.classList.toggle("bx-menu");
 	TOGGLE_MENU.classList.toggle("bx-x");
 };
+
 TOGGLE_MENU.addEventListener("click", toggleMenu);
 
-const toggleSocialBar = () => {
-	SOCIAL_BAR.style.bottom =
-		SOCIAL_BAR.style.bottom !== "90px" ? "90px" : "-100%";
-};
-TOGGLE_SOCIAL_BAR.addEventListener("click", toggleSocialBar);
-
-window.addEventListener("resize", () => {
-	if (window.innerWidth > 720) {
-		MENU.style.right = "-100%";
-		TOGGLE_MENU.classList.add("bx-menu");
-		TOGGLE_MENU.classList.remove("bx-x");
-		SOCIAL_BAR.style.bottom = "initial";
-	} else {
-/* 		MENU.style.right = "-100%"; */
+const closeSocialBar = () => {
+	if (SOCIAL_BAR.style.bottom === "90px") {
 		SOCIAL_BAR.style.bottom = "-100%";
 	}
+}
+
+const toggleSocialBar = () => {
+	SOCIAL_BAR.style.bottom = SOCIAL_BAR.style.bottom !== "90px" ? "90px" : "-100%";
+};
+
+TOGGLE_SOCIAL_BAR.addEventListener("click", toggleSocialBar);
+
+// Manejar redimensionamiento de pantalla
+
+function onMobileSize () {
+	return window.innerWidth <= 720 ? true : false;
+}
+
+window.addEventListener("resize", () => {
+	closeMenu()
+	closeSocialBar();
 });
 
 function scrollToTop () {
@@ -85,75 +100,100 @@ function fillProjects () {
 	document.getElementById("projects").innerHTML += projectsList;
 }
 
-// Scroll Reveal
-
-function initScrollReveal () {
-	const SR = ScrollReveal({
-		reset: true,
-		delay: 100,
-		duration: 1000,
-		distance: "100%",
-	});
-	
-	SR.reveal("#hero-img", { origin: "right" });
-	SR.reveal("#hero-text", { origin: "left" });
-	SR.reveal("#tools", { origin: "left" });
-	SR.reveal("#skills", { origin: "right" });
-	SR.reveal(".project", { origin: "left" });
-}
-
 // Manejo de navegacion SPA
 
 const ROUTES = [
 	{
-		hash: "home",
+		hash: "#home",
+		title: "Inicio",
 		sectionId: "hero",
+		animatedChildren: [
+			{
+				selector: "#hero-img",
+				origin: "right"
+			},
+			{
+				selector: "#hero-text",
+				origin: "left"
+			}
+		]
 	},
 	{
-		hash: "skills",
+		hash: "#skills",
+		title: "Herramientas y habilidades",
 		sectionId: "tools-and-skills",
+		animatedChildren: [
+			{
+				selector: "#tools",
+				origin: "left"
+			},
+			{
+				selector: "#skills",
+				origin: "right"
+			}
+		]
 	},
 	{
-		hash: "projects",
+		hash: "#projects",
+		title: "Ultimos proyectos",
 		sectionId: "projects",
+		animatedChildren: [
+			{
+				selector: ".project",
+				origin: "left"
+			}
+		]
 	}
 ]
 
 function handleNavigate (hash) {
-	document.querySelectorAll("section").forEach((sec)=>{sec.style.display="none"});
-	console.log(hash);
-	window.location = `#${hash}`;
-	let newId = ROUTES.find((route) => route.hash === hash).sectionId;
-	console.log(newId);
-	document.getElementById(newId).style.display = "grid";
+
+	let oldSection = document.querySelector("section.visible");
+
+	if (oldSection) {
+		/* Oculto seccion anterior y elimino animaciones */
+		oldSection.classList.remove("visible");
+		let animatedElements = oldSection.querySelectorAll("[data-sr-id]");
+
+		ScrollReveal().clean(animatedElements);
+		// Fix para evitar parpadeo al volver a secciones ya visitadas
+		animatedElements.forEach(elem => {elem.attributes.removeNamedItem("style")});
+	}
+
+	window.location = hash;
+	let newRoute = ROUTES.find((route) => route.hash === hash);
+	document.getElementById(newRoute.sectionId).classList.add("visible");
+	document.title = `Mauricio Pisco | ${newRoute.title}`;
+
+	newRoute.animatedChildren.forEach(child => {
+		ScrollReveal().reveal(child.selector, { origin: child.origin });
+	});
+
+	closeMenu();
+	closeSocialBar();
+	scrollToTop();
 }
 
 const initLocation = () => {
 	let currentHash = window.location.hash;
 	if (currentHash === "") {
-		handleNavigate("home");
+		handleNavigate("#home");
 	} else {
 		handleNavigate(currentHash);
 	}
 }
 
 document.getElementById("home-link").addEventListener("click", () => {
-	handleNavigate("home");
-	scrollToTop();
+	handleNavigate("#home");
 });
 document.getElementById("skills-link").addEventListener("click", () => {
-	toggleMenu();
-	handleNavigate("skills");
-	scrollToTop();
+	handleNavigate("#skills");
 });
 document.getElementById("projects-link").addEventListener("click", () => {
-	toggleMenu();
-	handleNavigate("projects");
-	scrollToTop();
+	handleNavigate("#projects");
 });
 
 document.addEventListener("DOMContentLoaded", fillSkills);
 document.addEventListener("DOMContentLoaded", fillTools);
 document.addEventListener("DOMContentLoaded", fillProjects);
-/* document.addEventListener("DOMContentLoaded", initScrollReveal); */
 document.addEventListener("DOMContentLoaded", initLocation);

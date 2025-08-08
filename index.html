@@ -7,6 +7,7 @@
 		<title>Mauricio Pisco | Inicio</title>
 
 		<link rel="stylesheet" href="./styles.css" />
+		<link rel="shortcut icon" href="./assets/favicon.ico" type="image/x-icon">
 
 		<!-- https://boxicons.com/ -->
 		<link
@@ -30,12 +31,20 @@
 
 		<!-- scroll reveal -->
 		<script src="https://unpkg.com/scrollreveal@4.0.0/dist/scrollreveal.min.js"></script>
+		<script>
+			ScrollReveal({
+				reset: false,
+				delay: 100,
+				duration: 1000,
+				distance: "100%",
+			});
+		</script>
 		<script defer src="script.js" type="module"></script>
 	</head>
 
 	<body>
 		<header>
-			<p id="home-link" class="logo">jDev128</p>
+			<p id="home-link" class="logo"><img src="./assets/logo.png">jDev128</p>
 
 			<div id="toggle-menu" class="bx bx-menu"></div>
 
