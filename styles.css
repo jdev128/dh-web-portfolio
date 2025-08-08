@@ -3,6 +3,10 @@
 	--contact-menu-width: 8dvw;
 }
 
+html, body {
+	overflow-x: hidden;
+}
+
 * {
 	box-sizing: border-box;
 	margin: 0;
@@ -21,7 +25,6 @@ body {
 		rgba(0, 0, 0, 1) 0%,
 		rgba(0, 73, 68, 1) 53%
 	);
-	overflow-x: hidden;
 }
 
 header {
@@ -32,7 +35,7 @@ header {
 		rgba(0, 0, 0, 0.5) 60%,
 		rgba(0, 0, 0, 0) 100%
 	);
-	position: sticky;
+	position: fixed;
 	top: 0;
 	width: 100%;
 	z-index: 20;
@@ -46,6 +49,7 @@ header {
 main {
 	display: grid;
 	grid-template-columns: var(--contact-menu-width) 1fr;
+	margin-block-start: var(--header-height);
 	margin-block-end: 1rem;
 	min-height: calc(100dvh - var(--header-height) - 1rem);
 }
@@ -55,13 +59,24 @@ section {
 	display: grid;
 	grid-template-columns: 1fr 1fr;
 	align-items: center;
-	gap: 10vh;
+	column-gap: 10vh;
+	row-gap: 2vh;
 }
 
-.logo {
+#home-link {
 	font-size: 30px;
 	font-weight: 800;
 	cursor: pointer;
+	display: flex;
+	align-items: center;
+	transition: transform 1s ease;
+	img {
+		height: 30px;
+		margin-inline-end: 1rem;
+	}
+	&:hover {
+		transform: scale(1.1);
+	}
 }
 
 #navigation-list ul {
@@ -194,16 +209,15 @@ a.button {
 	border-radius: 10px;
 	padding: 1rem;
 	width: 100%;
+	h4 {
+		margin-block-end: 1rem;
+	}
 }
 
 #tools-and-skills {
 	grid-column: 2;
 	justify-content: start;
-	grid-template-columns: 40% 1fr;
-	gap: 5vw;
-	h4 {
-		margin-block-end: 1rem;
-	}
+	grid-template-columns: 3fr 4fr;
 }
 
 .pill {
@@ -273,11 +287,22 @@ a.button {
 	}
 }
 
-/* Scroll Reveal (Home) */
+/* Inicializacion de secciones */
 
-/* html.sr :is(#hero-img, #hero-text, #skills, #tools, .project) {
+section {
+	display: none;
+	&.visible {
+		display: grid;
+	}
+}
+
+/* Scroll Reveal UX Trick 
+	https://scrollrevealjs.org/guide/user-experience.html
+*/
+
+html.sr :is(#hero-img, #hero-text, #tools, #skills, .project) {
 	visibility: hidden;
-} */
+}
 
 @media screen and (max-width: 720px) {
 	main {
