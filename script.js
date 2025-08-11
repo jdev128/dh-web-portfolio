@@ -1,4 +1,4 @@
-import data from "./info.json" with { type: "json" }; 
+import data from "./info.json" with { type: "json" };
 
 /* Manejo de menues para dispositivos moviles */
 
@@ -15,10 +15,12 @@ const closeMenu = () => {
 	MENU.style.right = "-100%";
 	TOGGLE_MENU.classList.remove("bx-x");
 	TOGGLE_MENU.classList.add("bx-menu");
-}
+};
 
 const toggleMenu = () => {
-	MENU.style.right = TOGGLE_MENU.classList.contains("bx-menu") ? "1rem" : "-100%";
+	MENU.style.right = TOGGLE_MENU.classList.contains("bx-menu")
+		? "1rem"
+		: "-100%";
 	TOGGLE_MENU.classList.toggle("bx-menu");
 	TOGGLE_MENU.classList.toggle("bx-x");
 };
@@ -29,33 +31,54 @@ const closeSocialBar = () => {
 	if (SOCIAL_BAR.style.bottom === "90px") {
 		SOCIAL_BAR.style.bottom = "-100%";
 	}
-}
+};
 
 const toggleSocialBar = () => {
-	SOCIAL_BAR.style.bottom = SOCIAL_BAR.style.bottom !== "90px" ? "90px" : "-100%";
+	SOCIAL_BAR.style.bottom =
+		SOCIAL_BAR.style.bottom !== "90px" ? "90px" : "-100%";
 };
 
 TOGGLE_SOCIAL_BAR.addEventListener("click", toggleSocialBar);
 
-// Manejar redimensionamiento de pantalla
-
-function onMobileSize () {
-	return window.innerWidth <= 720 ? true : false;
+function scrollToTop() {
+	window.scrollTo({ top: 0, behavior: "smooth" });
 }
 
+// Manejar redimensionamiento de pantalla
+
 window.addEventListener("resize", () => {
-	closeMenu()
+	closeMenu();
 	closeSocialBar();
 });
 
-function scrollToTop () {
-	window.scrollTo({top: 0, behavior: "smooth"});
+function fillPersonalData() {
+
+	let fullName = `${data.name} ${data.surname}`;
+	document.getElementById(
+		"full-name"
+	).innerText = fullName;
+	document.getElementById("role-title").innerText = data.headline;
+
+	let photo = document.querySelector("#hero-img img")
+	photo.src = data.profilePicture;
+	photo.alt = `${fullName} Photo`
+
+	document.getElementById("summary").innerText = data.profileSummary[1];
+
+	let linkedInElement = document.getElementById("linkedin");
+	linkedInElement.href = `https://www.linkedin.com/in/${data.contact.linkedin}/`;
+
+	let gitHubElement = document.getElementById("github");
+	gitHubElement.href = `https://github.com/${data.contact.github}/`;
+
+	document.getElementById("online-cv").href = data.onlineResume;
 }
 
 /* Obtencion de informacion para secciones secundarias */
 
 function fillTools() {
 	let toolsList = data.tools
+		.filter((tool) => !tool.hidden)
 		.map((tool) => {
 			return `<span class="pill">${tool.name}</span>`;
 		})
@@ -74,8 +97,9 @@ function fillSkills() {
 	document.getElementById("skills").innerHTML += skillsList;
 }
 
-function fillProjects () {
+function fillProjects() {
 	let projectsList = data.projects
+		.filter((project) => !project.hidden)
 		.map((project) => {
 			return `				
 			<div class="project container">
@@ -91,8 +115,16 @@ function fillProjects () {
 					<p class="tools">Herramientas usadas: ${project.technologies.join(", ")}</p>
 				</div>
 				<div class="footer">
-					<a class="button view-repo" target="_blank" href="${project.repositoryUrl}">Ver en GitHub</a>
-					<a class="button visit-demo" target="_blank" href="${project.url}">Ver online</a>
+					<a class="button view-repo" target="_blank" href="${
+						project.repositoryUrl
+					}">Ver en GitHub</a>
+					${location.href.includes(project.url) ?
+						`<span class="button disabled">
+							<span class="tooltip">Estas aqui</span>
+							Ver online
+						</span>` :
+						`<a class="button visit-demo" target="_blank" href="${project.url}">Ver online</a>`
+					}
 				</div>
 			</div>`;
 		})
@@ -110,13 +142,13 @@ const ROUTES = [
 		animatedChildren: [
 			{
 				selector: "#hero-img",
-				origin: "right"
+				origin: "right",
 			},
 			{
 				selector: "#hero-text",
-				origin: "left"
-			}
-		]
+				origin: "left",
+			},
+		],
 	},
 	{
 		hash: "#skills",
@@ -125,13 +157,13 @@ const ROUTES = [
 		animatedChildren: [
 			{
 				selector: "#tools",
-				origin: "left"
+				origin: "left",
 			},
 			{
 				selector: "#skills",
-				origin: "right"
-			}
-		]
+				origin: "right",
+			},
+		],
 	},
 	{
 		hash: "#projects",
@@ -140,14 +172,13 @@ const ROUTES = [
 		animatedChildren: [
 			{
 				selector: ".project",
-				origin: "left"
-			}
-		]
-	}
-]
+				origin: "left",
+			},
+		],
+	},
+];
 
-function handleNavigate (hash) {
-
+function handleNavigate(hash) {
 	let oldSection = document.querySelector("section.visible");
 
 	if (oldSection) {
@@ -157,15 +188,17 @@ function handleNavigate (hash) {
 
 		ScrollReveal().clean(animatedElements);
 		// Fix para evitar parpadeo al volver a secciones ya visitadas
-		animatedElements.forEach(elem => {elem.attributes.removeNamedItem("style")});
+		animatedElements.forEach((elem) => {
+			elem.attributes.removeNamedItem("style");
+		});
 	}
 
 	window.location = hash;
 	let newRoute = ROUTES.find((route) => route.hash === hash);
 	document.getElementById(newRoute.sectionId).classList.add("visible");
-	document.title = `Mauricio Pisco | ${newRoute.title}`;
+	document.title = `${data.name} ${data.surname} | ${newRoute.title}`;
 
-	newRoute.animatedChildren.forEach(child => {
+	newRoute.animatedChildren.forEach((child) => {
 		ScrollReveal().reveal(child.selector, { origin: child.origin });
 	});
 
@@ -181,7 +214,7 @@ const initLocation = () => {
 	} else {
 		handleNavigate(currentHash);
 	}
-}
+};
 
 document.getElementById("home-link").addEventListener("click", () => {
 	handleNavigate("#home");
@@ -193,6 +226,7 @@ document.getElementById("projects-link").addEventListener("click", () => {
 	handleNavigate("#projects");
 });
 
+document.addEventListener("DOMContentLoaded", fillPersonalData);
 document.addEventListener("DOMContentLoaded", fillSkills);
 document.addEventListener("DOMContentLoaded", fillTools);
 document.addEventListener("DOMContentLoaded", fillProjects);

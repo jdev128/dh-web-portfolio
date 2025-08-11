@@ -3,7 +3,8 @@
 	--contact-menu-width: 8dvw;
 }
 
-html, body {
+html,
+body {
 	overflow-x: hidden;
 }
 
@@ -121,7 +122,7 @@ section {
 
 .social-media-bar li {
 	font-size: 20px;
-	margin: 20px auto;
+	margin: 20px;
 }
 
 .social-media-bar i {
@@ -169,7 +170,7 @@ section {
 	margin-bottom: 30px;
 }
 
-a.button {
+.button {
 	display: inline-block;
 	font-size: 0.6rem;
 	font-weight: 500;
@@ -183,6 +184,46 @@ a.button {
 		background-color: transparent;
 		border: 1px solid white;
 		transform: translateX(5px);
+	}
+	&.disabled {
+		transform: none;
+		cursor: default;
+		background-color: rgba(0, 0, 0, 0.4);
+		color: rgba(255, 255, 255, 0.6);
+		border-color: rgba(255, 255, 255, 0.6);
+	}
+}
+
+:has(>.tooltip) {
+	position: relative;
+	&:is(:hover, :focus) .tooltip {
+		display: inline-flex;
+	}
+}
+
+.tooltip {
+	position: absolute;
+	display: inline-flex;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+	padding: 1em;
+	background-color: rgba(0, 0, 0, 0.8);
+	color: white;
+	bottom: calc(100% + 1em * 2);
+	border-radius: 5px;
+	left: 0;
+	width: 100%;
+	display: none;
+	&::after {
+		content: "";
+		display: block;
+		position: absolute;
+		top: 100%;
+		left: calc(50% - 5px);
+		border-top: 8px solid rgba(0, 0, 0, 0.8);
+		border-left: 5px solid transparent;
+		border-right: 5px solid transparent;
 	}
 }
 
@@ -279,7 +320,7 @@ a.button {
 .project .footer {
 	display: flex;
 	justify-content: end;
-	a {
+	.button {
 		margin-inline-start: 2vh;
 		&.visit-demo {
 			border-color: white;
@@ -316,9 +357,11 @@ html.sr :is(#hero-img, #hero-text, #tools, #skills, .project) {
 		grid-template-columns: 1fr;
 	}
 
-	#hero, #tools-and-skills, #projects {
+	#hero,
+	#tools-and-skills,
+	#projects {
 		grid-template-columns: 1fr;
-        align-items: start;
+		align-items: start;
 	}
 
 	#navigation-list {
@@ -360,7 +403,7 @@ html.sr :is(#hero-img, #hero-text, #tools, #skills, .project) {
 			rgba(0, 0, 0, 1) 0%,
 			rgba(0, 0, 0, 0.7) 100%
 		);
-		width: 50vw;
+		padding-inline: 3vh;
 		height: 60px;
 		border-radius: 10px;
 		position: fixed;

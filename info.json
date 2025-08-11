@@ -2,7 +2,7 @@
 	"name": "Mauricio Daniel",
 	"surname": "Pisco",
 	"headline": "Desarrollador Frontend React",
-	"profilePicture": "./assets/photo.jpg",
+	"profilePicture": "./assets/images/confident-pic-2.jpg",
 	"location": {
 		"city": "La Plata",
 		"country": "Argentina",
@@ -20,7 +20,11 @@
 		"github": "jdev128",
 		"x": "MauricioPisco"
 	},
-	"profileSummary": "Desarrollador web con más de YEARS_PLACEHOLDER años de experiencia en seguros de salud. <br><br> Con alma emprendedora y curioso por naturaleza, busco continuamente nuevas formas de resolver problemas con las herramientas que integro de forma cotidiana, enfocándome en empatizar con el usuario para crear soluciones digitales que le aporten un valor real.",
+	"profileSummary": [
+		"Desarrollador web con más de YEARS_PLACEHOLDER años de experiencia en seguros de salud.",
+		"Con alma emprendedora y curioso por naturaleza, busco continuamente nuevas formas de resolver problemas con las herramientas que integro de forma cotidiana, enfocándome en empatizar con el usuario para crear soluciones digitales que le aporten un valor real."
+	],
+	"onlineResume": "https://jdev128.github.io/web-cv/",
 	"firstJobDate": "2019-08-05",
 	"skills": [
 		"escucha activa",
@@ -83,111 +87,138 @@
 	"tools": [
 		{
 			"name": "HTML",
-			"level": "Avanzado"
+			"level": "Avanzado",
+			"hidden": false
 		},
 		{
 			"name": "CSS",
-			"level": "Avanzado"
+			"level": "Avanzado",
+			"hidden": false
 		},
 		{
 			"name": "Sass",
-			"level": "Intermedio"
+			"level": "Intermedio",
+			"hidden": false
 		},
 		{
 			"name": "JavaScript",
-			"level": "Avanzado"
+			"level": "Avanzado",
+			"hidden": false
 		},
 		{
 			"name": "TypeScript",
-			"level": "Intermedio"
+			"level": "Intermedio",
+			"hidden": false
 		},
 		{
 			"name": "React",
-			"level": "Avanzado"
+			"level": "Avanzado",
+			"hidden": false
 		},
 		{
 			"name": "Redux",
-			"level": "Intermedio"
+			"level": "Intermedio",
+			"hidden": false
 		},
 		{
 			"name": "Ionic",
-			"level": "Intermedio"
+			"level": "Intermedio",
+			"hidden": false
 		},
 		{
 			"name": "Bootstrap",
-			"level": "Basico"
+			"level": "Basico",
+			"hidden": false
 		},
 		{
 			"name": "Material-UI",
-			"level": "Basico"
+			"level": "Basico",
+			"hidden": false
 		},
 		{
 			"name": "RESTful APIs",
-			"level": "Intermedio"
+			"level": "Intermedio",
+			"hidden": false
 		},
 		{
 			"name": "SQL",
-			"level": "Intermedio"
+			"level": "Intermedio",
+			"hidden": false
 		},
 		{
 			"name": "Git",
-			"level": "Intermedio"
+			"level": "Intermedio",
+			"hidden": false
 		},
 		{
 			"name": "GitHub",
-			"level": "Intermedio"
+			"level": "Intermedio",
+			"hidden": false
 		},
 		{
 			"name": "Postman",
-			"level": "Intermedio"
+			"level": "Intermedio",
+			"hidden": false
 		},
 		{
 			"name": "Visual Studio Code",
-			"level": "Intermedio"
+			"level": "Intermedio",
+			"hidden": false
 		},
 		{
 			"name": "Docker",
-			"level": "Intermedio"
+			"level": "Intermedio",
+			"hidden": false
 		},
 		{
 			"name": "Bash / Linux",
-			"level": "Intermedio"
+			"level": "Intermedio",
+			"hidden": false
 		},
 		{
 			"name": "Kubernetes",
-			"level": "Basico"
+			"level": "Basico",
+			"hidden": false
 		},
 		{
 			"name": "Amazon Web Services",
-			"level": "Basico"
+			"level": "Basico",
+			"hidden": false
 		},
 		{
 			"name": "Agile",
-			"level": "Intermedio"
+			"level": "Intermedio",
+			"hidden": false
 		},
 		{
 			"name": "Scrum",
-			"level": "Intermedio"
+			"level": "Intermedio",
+			"hidden": false
 		},
 		{
 			"name": "Kanban",
-			"level": "Intermedio"
+			"level": "Intermedio",
+			"hidden": false
 		},
 		{
 			"name": "Figma",
-			"level": "Intermedio"
+			"level": "Intermedio",
+			"hidden": false
 		},
 		{
 			"name": "Jira",
-			"level": "Basico"
+			"level": "Basico",
+			"hidden": false
 		},
 		{
 			"name": "Confluence",
-			"level": "Basico"
+			"level": "Basico",
+			"hidden": false
 		},
 		{
 			"name": "Selenium",
-			"level": "Basico"
+			"level": "Basico",
+			"hidden": false
 		}
 	],
 	"languages": [
@@ -562,14 +593,16 @@
 			"description": "Un sitio web para que puedas conocerme mejor y conectar conmigo.",
 			"technologies": ["html5", "css", "javascript", "responsive design"],
 			"url": "https://jdev128-portfolio.netlify.app/",
-			"repositoryUrl": "https://github.com/jdev128/dh-web-portfolio"
+			"repositoryUrl": "https://github.com/jdev128/dh-web-portfolio",
+			"hidden": false
 		},
 		{
 			"title": "Live CV",
 			"description": "Un resumen online de quien soy y lo que estuve haciendo estos ultimos años.",
 			"technologies": ["html5", "css", "javascript", "responsive design"],
 			"url": "https://jdev128.github.io/web-cv/",
-			"repositoryUrl": "https://github.com/jdev128/web-cv"
+			"repositoryUrl": "https://github.com/jdev128/web-cv",
+			"hidden": false
 		},
 		{
 			"title": "Pizza Time",
@@ -584,14 +617,16 @@
 				"tmdb api"
 			],
 			"url": "https://jdev128-movies.netlify.app/",
-			"repositoryUrl": "https://github.com/jdev128/movies-catalog"
+			"repositoryUrl": "https://github.com/jdev128/movies-catalog",
+			"hidden": false
 		},
 		{
 			"title": "Hello World ... Banking",
 			"description": "Una aplicacion bancaria para que simules transacciones en un entorno libre de riesgos.",
 			"technologies": ["html5", "css", "javascript", "responsive design"],
 			"url": "https://jdev128-bank-account.netlify.app/",
-			"repositoryUrl": "https://github.com/jdev128/js-poo-collections-bank-account"
+			"repositoryUrl": "https://github.com/jdev128/js-poo-collections-bank-account",
+			"hidden": false
 		},
 		{
 			"title": "Ephemeral Blog",
@@ -605,7 +640,8 @@
 				"json placeholder api"
 			],
 			"url": "https://jdev128-blog.netlify.app/",
-			"repositoryUrl": "https://github.com/jdev128/dh-javascript-blog"
+			"repositoryUrl": "https://github.com/jdev128/dh-javascript-blog",
+			"hidden": false
 		},
 		{
 			"title": "Suitcase Checker",
@@ -618,7 +654,8 @@
 				"open weather map api"
 			],
 			"url": "https://jdev128-weather.netlify.app/",
-			"repositoryUrl": "https://github.com/jdev128/dh-javascript-weather-app"
+			"repositoryUrl": "https://github.com/jdev128/dh-javascript-weather-app",
+			"hidden": true
 		}
 	],
 	"volunteerExperience": [
