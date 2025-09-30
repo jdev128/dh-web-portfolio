@@ -60,10 +60,10 @@ function fillPersonalData() {
 	document.getElementById("role-title").innerText = data.headline;
 
 	let photo = document.querySelector("#hero-img img")
-	photo.src = data.profilePicture;
+	photo.src = data.portfolioPicture;
 	photo.alt = `${fullName} Photo`
 
-	document.getElementById("summary").innerText = data.profileSummary[1];
+	document.getElementById("summary").innerText = data.profileSummary[2];
 
 	let linkedInElement = document.getElementById("linkedin");
 	linkedInElement.href = `https://www.linkedin.com/in/${data.contact.linkedin}/`;
@@ -88,9 +88,10 @@ function fillTools() {
 
 function fillSkills() {
 	let skillsList = data.skills
+		.filter((skill) => !skill.hidden)
 		.map((skill) => {
 			return `<span class="pill">${
-				skill[0].toUpperCase() + skill.slice(1)
+				skill.description[0].toUpperCase() + skill.description.slice(1)
 			}</span>`;
 		})
 		.join("");
