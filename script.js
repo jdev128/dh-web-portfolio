@@ -63,7 +63,7 @@ function fillPersonalData() {
 	photo.src = data.portfolioPicture;
 	photo.alt = `${fullName} Photo`
 
-	document.getElementById("summary").innerText = data.profileSummary[2];
+	document.getElementById("summary").innerText = data.profileSummary[1];
 
 	let linkedInElement = document.getElementById("linkedin");
 	linkedInElement.href = `https://www.linkedin.com/in/${data.contact.linkedin}/`;
