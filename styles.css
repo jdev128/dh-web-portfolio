@@ -258,7 +258,7 @@ section {
 #tools-and-skills {
 	grid-column: 2;
 	justify-content: start;
-	grid-template-columns: 6fr 4fr;
+	grid-template-columns: 5fr 4fr;
 }
 
 .pill {
