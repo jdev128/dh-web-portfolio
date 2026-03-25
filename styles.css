@@ -60,7 +60,7 @@ section {
 	display: grid;
 	grid-template-columns: 1fr 1fr;
 	align-items: center;
-	column-gap: 10vh;
+	column-gap: 5vh;
 	row-gap: 2vh;
 }
 
@@ -250,23 +250,32 @@ section {
 	border-radius: 10px;
 	padding: 1rem;
 	width: 100%;
-	h4 {
-		margin-block-end: 1rem;
-	}
 }
 
 #tools-and-skills {
 	grid-column: 2;
 	justify-content: start;
-	grid-template-columns: 5fr 4fr;
+	align-items: start;
+	grid-template-columns: 9fr 3fr;
+	h3 {
+		border-block-end: 1px solid white;
+		padding-block-end: 1rem;
+		margin-block-end: 1rem;
+	}
 }
 
-.pill {
+.tool-category {
+	font-weight: 600;
+	margin-block-end: 1rem;
+}
+
+.skill {
 	display: inline-flex;
 	align-items: center;
-	padding: 0.3rem 1.2rem;
-	margin: 0 0.6rem 0.8rem 0;
-	border-radius: 1rem;
+	text-align: center;
+	padding: 0.4rem 1.2rem;
+	margin: 0 0.6rem 1rem 0;
+	border-radius: 3rem;
 	border: solid 1px black;
 	background-color: rgba(0, 0, 0, 0.6);
 	color: white;
