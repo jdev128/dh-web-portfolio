@@ -1,5 +1,7 @@
 import data from "./info.json" with { type: "json" };
 
+const MILLISECONDS_IN_A_YEAR = 60 * 1000 * 60 * 24 * 365;
+
 /* Manejo de menues para dispositivos moviles */
 
 const TOGGLE_MENU = document.getElementById("toggle-menu");
@@ -7,6 +9,12 @@ const MENU = document.getElementById("navigation-list");
 
 const TOGGLE_SOCIAL_BAR = document.getElementById("toggle-social-bar");
 const SOCIAL_BAR = document.querySelector("aside.social-media-bar ul");
+
+function calculateElapsedYears(initialDate) {
+	return Math.floor(
+		(Date.now() - new Date(initialDate).getTime()) / MILLISECONDS_IN_A_YEAR
+	);
+}
 
 const closeMenu = () => {
 	if (!TOGGLE_MENU.classList.contains("bx-x")) {
@@ -63,8 +71,6 @@ function fillPersonalData() {
 	photo.src = data.portfolioPicture;
 	photo.alt = `${fullName} Photo`
 
-	document.getElementById("summary").innerText = data.profileSummary[1];
-
 	let linkedInElement = document.getElementById("linkedin");
 	linkedInElement.href = `https://www.linkedin.com/in/${data.contact.linkedin}/`;
 
@@ -72,6 +78,12 @@ function fillPersonalData() {
 	gitHubElement.href = `https://github.com/${data.contact.github}/`;
 
 	document.getElementById("online-cv").href = data.onlineResume;
+}
+
+function fillProfileSummary() {
+	let profileSummary = data.profileSummary[0]
+		.replace("TOTAL_EXPERIENCE", calculateElapsedYears(data.firstJobDate));
+	document.getElementById("profile").innerHTML = profileSummary;
 }
 
 /* Obtencion de informacion para secciones secundarias */
@@ -233,6 +245,7 @@ document.getElementById("projects-link").addEventListener("click", () => {
 });
 
 document.addEventListener("DOMContentLoaded", fillPersonalData);
+document.addEventListener("DOMContentLoaded", fillProfileSummary);
 document.addEventListener("DOMContentLoaded", fillSkills);
 document.addEventListener("DOMContentLoaded", fillTools);
 document.addEventListener("DOMContentLoaded", fillProjects);
