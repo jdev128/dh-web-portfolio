@@ -166,7 +166,7 @@ section {
 }
 
 #hero-text p {
-	font-size: 80%;
+	font-size: 0.9rem;
 	margin-bottom: 30px;
 }
 
@@ -274,7 +274,7 @@ section {
 	align-items: center;
 	text-align: center;
 	padding: 0.4rem 1.2rem;
-	margin: 0 0.6rem 1rem 0;
+	margin: 0 0.4rem 1rem 0;
 	border-radius: 3rem;
 	border: solid 1px black;
 	background-color: rgba(0, 0, 0, 0.6);
