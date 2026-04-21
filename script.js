@@ -12,7 +12,7 @@ const SOCIAL_BAR = document.querySelector("aside.social-media-bar ul");
 
 function calculateElapsedYears(initialDate) {
 	return Math.floor(
-		(Date.now() - new Date(initialDate).getTime()) / MILLISECONDS_IN_A_YEAR
+		(Date.now() - new Date(initialDate).getTime()) / MILLISECONDS_IN_A_YEAR,
 	);
 }
 
@@ -60,16 +60,13 @@ window.addEventListener("resize", () => {
 });
 
 function fillPersonalData() {
-
 	let fullName = `${data.name} ${data.surname}`;
-	document.getElementById(
-		"full-name"
-	).innerText = fullName;
+	document.getElementById("full-name").innerText = fullName;
 	document.getElementById("role-title").innerText = data.headline;
 
-	let photo = document.querySelector("#hero-img img")
+	let photo = document.querySelector("#hero-img img");
 	photo.src = data.portfolioPicture;
-	photo.alt = `${fullName} Photo`
+	photo.alt = `${fullName} Photo`;
 
 	let linkedInElement = document.getElementById("linkedin");
 	linkedInElement.href = `https://www.linkedin.com/in/${data.contact.linkedin}/`;
@@ -81,16 +78,22 @@ function fillPersonalData() {
 }
 
 function fillProfileSummary() {
-	let profileSummary = data.profileSummary[0]
-		.replace("TOTAL_EXPERIENCE", calculateElapsedYears(data.firstJobDate));
+	let profileSummary = data.profileSummary
+		.map((paragraph) => {
+			return paragraph;
+		})
+		.join(" ");
+	profileSummary = profileSummary.replace(
+		"TOTAL_EXPERIENCE",
+		calculateElapsedYears(data.firstJobDate),
+	);
 	document.getElementById("profile").innerHTML = profileSummary;
 }
 
 /* Obtencion de informacion para secciones secundarias */
 
 function fillTools() {
-	data.toolCategories.forEach(category => {
-
+	data.toolCategories.forEach((category) => {
 		let toolsList = data.tools
 			.filter((tool) => tool.categoryId === category.id && !tool.hidden)
 			.map((tool) => {
@@ -99,20 +102,10 @@ function fillTools() {
 			.join("&nbsp;");
 
 		let categoryTools = document.createElement("p");
-		categoryTools.innerHTML = `<div class="tool-category">${category.description}</div> ${toolsList}<br>`
+		categoryTools.innerHTML = `<div class="tool-category">${category.description}</div> ${toolsList}<br>`;
 
 		document.getElementById("tools").appendChild(categoryTools);
 	});
-
-}
-
-function fillSkills() {
-	let skillsList = data.skills.filter(skill => !skill.hidden)
-		.map((skill) => {
-			return `<span class="skill">${skill.description}</span>`;
-		})
-		.join("&nbsp;");
-	document.getElementById("skills").innerHTML += skillsList;
 }
 
 function fillProjects() {
@@ -136,12 +129,13 @@ function fillProjects() {
 					<a class="button view-repo" target="_blank" href="${
 						project.repositoryUrl
 					}">Ver en GitHub</a>
-					${location.href.includes(project.url) ?
-						`<span class="button disabled">
+					${
+						location.href.includes(project.url)
+							? `<span class="button disabled">
 							<span class="tooltip">Estas aqui</span>
 							Ver online
-						</span>` :
-						`<a class="button visit-demo" target="_blank" href="${project.url}">Ver online</a>`
+						</span>`
+							: `<a class="button visit-demo" target="_blank" href="${project.url}">Ver online</a>`
 					}
 				</div>
 			</div>`;
@@ -246,7 +240,6 @@ document.getElementById("projects-link").addEventListener("click", () => {
 
 document.addEventListener("DOMContentLoaded", fillPersonalData);
 document.addEventListener("DOMContentLoaded", fillProfileSummary);
-document.addEventListener("DOMContentLoaded", fillSkills);
 document.addEventListener("DOMContentLoaded", fillTools);
 document.addEventListener("DOMContentLoaded", fillProjects);
 document.addEventListener("DOMContentLoaded", initLocation);

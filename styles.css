@@ -155,6 +155,10 @@ section {
 	transform: translateY(-5px);
 }
 
+#hero-text > :not(:last-child) {
+	margin-bottom: 1.5rem;
+}
+
 #hero-text h4 {
 	font-size: 1.4rem;
 	font-weight: 500;
@@ -162,12 +166,10 @@ section {
 
 #hero-text h1 {
 	font-size: 2.8rem;
-	margin-bottom: 30px;
 }
 
 #hero-text p {
 	font-size: 0.9rem;
-	margin-bottom: 30px;
 }
 
 .button {
@@ -253,15 +255,15 @@ section {
 }
 
 #tools-and-skills {
-	grid-column: 2;
+	grid-template-columns: 1fr;
 	justify-content: start;
 	align-items: start;
-	grid-template-columns: 9fr 3fr;
-	h3 {
-		border-block-end: 1px solid white;
-		padding-block-end: 1rem;
-		margin-block-end: 1rem;
-	}
+}
+
+#tools {
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	gap: 1rem;
 }
 
 .tool-category {
@@ -354,7 +356,7 @@ html.sr :is(#hero-img, #hero-text, #tools, #skills, .project) {
 	visibility: hidden;
 }
 
-@media screen and (max-width: 720px) {
+@media screen and (max-width: 768px) {
 	main {
 		grid-template-columns: 1fr;
 		margin-inline-end: 0;
@@ -367,8 +369,8 @@ html.sr :is(#hero-img, #hero-text, #tools, #skills, .project) {
 	}
 
 	#hero,
-	#tools-and-skills,
-	#projects {
+	#projects,
+	#tools {
 		grid-template-columns: 1fr;
 		align-items: start;
 	}
