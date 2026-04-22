@@ -266,6 +266,10 @@ section {
 	gap: 1rem;
 }
 
+#tools :last-child {
+	grid-column-start: 2;
+}
+
 .tool-category {
 	font-weight: 600;
 	margin-block-end: 1rem;
@@ -373,6 +377,10 @@ html.sr :is(#hero-img, #hero-text, #tools, #skills, .project) {
 	#tools {
 		grid-template-columns: 1fr;
 		align-items: start;
+	}
+
+	#tools :last-child {
+		grid-column-start: 1;
 	}
 
 	#navigation-list {
