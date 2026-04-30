@@ -10,10 +10,13 @@ const MENU = document.getElementById("navigation-list");
 const TOGGLE_SOCIAL_BAR = document.getElementById("toggle-social-bar");
 const SOCIAL_BAR = document.querySelector("aside.social-media-bar ul");
 
-function calculateElapsedYears(initialDate) {
-	return Math.floor(
-		(Date.now() - new Date(initialDate).getTime()) / MILLISECONDS_IN_A_YEAR,
-	);
+function computeTotalExperience(experience) {
+	let totalTime = experience.reduce((total, job) => {
+		let jobStart = new Date(job.startDate).getTime();
+		let jobEnd = job.endDate ? new Date(job.endDate).getTime() : Date.now();
+		return total + (jobEnd - jobStart);
+	}, 0);
+	return Math.floor(totalTime / MILLISECONDS_IN_A_YEAR);
 }
 
 const closeMenu = () => {
@@ -65,7 +68,7 @@ function fillPersonalData() {
 	document.getElementById("role-title").innerText = data.headline;
 
 	let photo = document.querySelector("#hero-img img");
-	photo.src = data.portfolioPicture;
+	photo.src = data.profilePicture;
 	photo.alt = `${fullName} Photo`;
 
 	let linkedInElement = document.getElementById("linkedin");
@@ -78,14 +81,9 @@ function fillPersonalData() {
 }
 
 function fillProfileSummary() {
-	let profileSummary = data.profileSummary
-		.map((paragraph) => {
-			return paragraph;
-		})
-		.join(" ");
-	profileSummary = profileSummary.replace(
+	let profileSummary = data.profileSummary[0].replace(
 		"TOTAL_EXPERIENCE",
-		calculateElapsedYears(data.firstJobDate),
+		computeTotalExperience(data.experience),
 	);
 	document.getElementById("profile").innerHTML = profileSummary;
 }

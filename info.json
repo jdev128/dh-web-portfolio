@@ -1,12 +1,12 @@
 {
 	"name": "Mauricio Daniel",
 	"surname": "Pisco",
-	"headline": "Full Stack Engineer | React & Java | Product-Focused",
-	"keywordsHeadline": "Full Stack Engineer | React & TypeScript | Java | Frontend-Focused | Product-Oriented",
+	"headline": "Full Stack Developer | Java & React",
+	"keywordsHeadline": "Full Stack Developer | Java (Spring Boot) & React | APIs REST | Docker & Kubernetes | mTLS / SSL Pinning",
 	"profilePicture": "./assets/photo.jpg",
 	"portfolioPicture": "./assets/images/confident-pic-2.jpg",
 	"location": {
-		"city": "La Plata",
+		"city": "La Plata, Buenos Aires",
 		"country": "Argentina",
 		"mapsUrl": "https://maps.app.goo.gl/U7btArnFZ1YHHk9XA"
 	},
@@ -25,13 +25,12 @@
 		"x": "MauricioPisco"
 	},
 	"profileSummary": [
-		"Full Stack Engineer con TOTAL_EXPERIENCE años de experiencia desarrollando y optimizando sistemas críticos en el sector salud.",
-		"Combino una sólida base en backend (Java) con especialización en frontend (React/TypeScript) y una fuerte orientación a producto, colaborando estrechamente con equipos de diseño y negocio para construir soluciones centradas en el usuario.",
-		"Me enfoco en construir soluciones mantenibles y escalables, asegurando una experiencia de usuario consistente alineada a la evolución del producto."
+		"Full Stack Developer con +TOTAL_EXPERIENCE años de experiencia en sistemas críticos. Trabajo con <b>Java</b> y <b>React (TypeScript)</b>, desarrollando e integrando <b>APIs REST seguras (mTLS / SSL Pinning)</b> en entornos de alta disponibilidad.",
+		"Experiencia en desarrollo backend con <b>Java EE</b> y despliegue de soluciones con <b>Docker</b> y <b>Kubernetes</b> en entornos de producción. Familiaridad con <b>Spring Boot</b> para la construcción de APIs modernas.",
+		"Participo en <b>code reviews</b> y aplico criterios de <b>testing funcional</b> para asegurar la calidad de las entregas. Trabajo en la ejecución <b>end-to-end</b> (análisis, desarrollo y soporte), descomponiendo requerimientos complejos en soluciones ejecutables y generando documentación técnica para facilitar el onboarding.",
+		"Disponibilidad inmediata para trabajo remoto y esquema híbrido en CABA (hasta 2 días por semana)."
 	],
 	"onlineResume": "https://jdev128.github.io/web-cv/",
-	"firstJobDate": "2019-08-05",
-	"firstFrontendJobDate": "2022-08-01",
 	"skills": [
 		{
 			"description": "Resolución de problemas",
@@ -150,28 +149,24 @@
 	],
 	"toolCategories": [
 		{
-			"id": 2,
-			"description": "Frontend"
-		},
-		{
 			"id": 3,
 			"description": "Backend & APIs"
 		},
 		{
-			"id": 4,
-			"description": "Infra & DevOps"
+			"id": 2,
+			"description": "Frontend"
 		},
 		{
 			"id": 1,
-			"description": "Metodologías"
+			"description": "Testing"
+		},
+		{
+			"id": 4,
+			"description": "DevOps & Cloud"
 		},
 		{
 			"id": 5,
-			"description": "Calidad"
-		},
-		{
-			"id": 6,
-			"description": "UX/UI"
+			"description": "Tools & Quality"
 		}
 	],
 	"tools": [
@@ -194,30 +189,6 @@
 			"categoryId": 2
 		},
 		{
-			"name": "TanStack Query",
-			"level": "Intermedio",
-			"hidden": false,
-			"categoryId": 2
-		},
-		{
-			"name": "Context API",
-			"level": "Intermedio",
-			"hidden": false,
-			"categoryId": 2
-		},
-		{
-			"name": "Redux",
-			"level": "Basico",
-			"hidden": true,
-			"categoryId": 2
-		},
-		{
-			"name": "Vite",
-			"level": "Intermedio",
-			"hidden": false,
-			"categoryId": 2
-		},
-		{
 			"name": "HTML5",
 			"level": "Avanzado",
 			"hidden": false,
@@ -230,9 +201,39 @@
 			"categoryId": 2
 		},
 		{
+			"name": "Redux",
+			"level": "Basico",
+			"hidden": true,
+			"categoryId": 2
+		},
+		{
+			"name": "TanStack Query",
+			"level": "Intermedio",
+			"hidden": false,
+			"categoryId": 2
+		},
+		{
+			"name": "Context API",
+			"level": "Intermedio",
+			"hidden": false,
+			"categoryId": 2
+		},
+		{
+			"name": "Vite",
+			"level": "Intermedio",
+			"hidden": false,
+			"categoryId": 2
+		},
+		{
+			"name": "Ionic",
+			"level": "Intermedio",
+			"hidden": false,
+			"categoryId": 2
+		},
+		{
 			"name": "CSS Modules",
 			"level": "Intermedio",
-			"hidden": true,
+			"hidden": false,
 			"categoryId": 2
 		},
 		{
@@ -242,13 +243,91 @@
 			"categoryId": 2
 		},
 		{
-			"name": "Ionic",
+			"name": "Responsive Design",
 			"level": "Intermedio",
 			"hidden": true,
 			"categoryId": 2
 		},
 		{
-			"name": "Java (EE / JBoss)",
+			"name": "Rendimiento",
+			"level": "Basico",
+			"hidden": true,
+			"categoryId": 2
+		},
+		{
+			"name": "Accesibilidad",
+			"level": "Basico",
+			"hidden": true,
+			"categoryId": 2
+		},
+		{
+			"name": "JUnit",
+			"level": "Basico",
+			"hidden": false,
+			"categoryId": 1
+		},
+		{
+			"name": "Mockito",
+			"level": "Basico",
+			"hidden": false,
+			"categoryId": 1
+		},
+		{
+			"name": "React Testing Library",
+			"level": "Basico",
+			"hidden": false,
+			"categoryId": 1
+		},
+		{
+			"name": "Vitest",
+			"level": "Basico",
+			"hidden": false,
+			"categoryId": 1
+		},
+		{
+			"name": "Selenium",
+			"level": "Basico",
+			"hidden": true,
+			"categoryId": 1
+		},
+		{
+			"name": "Testing Funcional",
+			"level": "Basico",
+			"hidden": false,
+			"categoryId": 1
+		},
+		{
+			"name": "Java",
+			"level": "Intermedio",
+			"hidden": false,
+			"categoryId": 3
+		},
+		{
+			"name": "Spring Boot",
+			"level": "Basico",
+			"hidden": false,
+			"categoryId": 3
+		},
+		{
+			"name": "Java EE (JBoss)",
+			"level": "Intermedio",
+			"hidden": false,
+			"categoryId": 3
+		},
+		{
+			"name": "JPA",
+			"level": "Intermedio",
+			"hidden": false,
+			"categoryId": 3
+		},
+		{
+			"name": "Hibernate",
+			"level": "Intermedio",
+			"hidden": false,
+			"categoryId": 3
+		},
+		{
+			"name": "Maven",
 			"level": "Intermedio",
 			"hidden": false,
 			"categoryId": 3
@@ -260,7 +339,25 @@
 			"categoryId": 3
 		},
 		{
-			"name": "SQL (SQL Server)",
+			"name": "SQL Server",
+			"level": "Intermedio",
+			"hidden": false,
+			"categoryId": 3
+		},
+		{
+			"name": "GraphQL",
+			"level": "Basico",
+			"hidden": true,
+			"categoryId": 3
+		},
+		{
+			"name": "mTLS",
+			"level": "Intermedio",
+			"hidden": false,
+			"categoryId": 3
+		},
+		{
+			"name": "SSL Pinning",
 			"level": "Intermedio",
 			"hidden": false,
 			"categoryId": 3
@@ -278,24 +375,6 @@
 			"categoryId": 3
 		},
 		{
-			"name": "GraphQL",
-			"level": "Basico",
-			"hidden": true,
-			"categoryId": 3
-		},
-		{
-			"name": "mTLS",
-			"level": "Intermedio",
-			"hidden": true,
-			"categoryId": 3
-		},
-		{
-			"name": "SSL Pinning",
-			"level": "Intermedio",
-			"hidden": true,
-			"categoryId": 3
-		},
-		{
 			"name": "Docker",
 			"level": "Intermedio",
 			"hidden": false,
@@ -308,13 +387,7 @@
 			"categoryId": 4
 		},
 		{
-			"name": "AWS (Cloud Practitioner)",
-			"level": "Basico",
-			"hidden": true,
-			"categoryId": 4
-		},
-		{
-			"name": "CI/CD",
+			"name": "CI/CD Pipelines",
 			"level": "Basico",
 			"hidden": false,
 			"categoryId": 4
@@ -328,71 +401,29 @@
 		{
 			"name": "Linux (Bash)",
 			"level": "Intermedio",
-			"hidden": true,
+			"hidden": false,
 			"categoryId": 4
 		},
 		{
-			"name": "Scrum",
-			"level": "Intermedio",
-			"hidden": false,
-			"categoryId": 1
-		},
-		{
-			"name": "Kanban",
-			"level": "Intermedio",
-			"hidden": false,
-			"categoryId": 1
-		},
-		{
-			"name": "Jira",
-			"level": "Basico",
-			"hidden": true,
-			"categoryId": 1
-		},
-		{
-			"name": "Code Review",
-			"level": "Intermedio",
-			"hidden": false,
-			"categoryId": 1
-		},
-		{
-			"name": "Buenas Prácticas de Código",
-			"level": "Intermedio",
-			"hidden": true,
-			"categoryId": 5
-		},
-		{
-			"name": "SOLID",
-			"level": "Intermedio",
-			"hidden": true,
-			"categoryId": 5
-		},
-		{
-			"name": "Testing Frontend",
+			"name": "AWS (Cloud Practitioner)",
 			"level": "Basico",
 			"hidden": false,
-			"categoryId": 5
+			"categoryId": 4
 		},
 		{
-			"name": "Vitest",
-			"level": "Basico",
-			"hidden": true,
-			"categoryId": 5
-		},
-		{
-			"name": "React Testing Library",
-			"level": "Basico",
-			"hidden": true,
-			"categoryId": 5
-		},
-		{
-			"name": "Testing Funcional",
-			"level": "Basico",
+			"name": "Postman",
+			"level": "Intermedio",
 			"hidden": false,
 			"categoryId": 5
 		},
 		{
-			"name": "Test Design",
+			"name": "cURL",
+			"level": "Intermedio",
+			"hidden": false,
+			"categoryId": 5
+		},
+		{
+			"name": "OpenSSL",
 			"level": "Basico",
 			"hidden": false,
 			"categoryId": 5
@@ -410,20 +441,44 @@
 			"categoryId": 5
 		},
 		{
-			"name": "Selenium",
+			"name": "VS Code",
+			"level": "Intermedio",
+			"hidden": true,
+			"categoryId": 5
+		},
+		{
+			"name": "Xcode",
 			"level": "Basico",
 			"hidden": true,
 			"categoryId": 5
 		},
 		{
-			"name": "Rendimiento",
+			"name": "Android Studio",
 			"level": "Basico",
 			"hidden": true,
 			"categoryId": 5
 		},
 		{
-			"name": "Accesibilidad",
+			"name": "GitHub Copilot",
 			"level": "Basico",
+			"hidden": true,
+			"categoryId": 5
+		},
+		{
+			"name": "Jira",
+			"level": "Basico",
+			"hidden": true,
+			"categoryId": 5
+		},
+		{
+			"name": "Scrum",
+			"level": "Intermedio",
+			"hidden": true,
+			"categoryId": 5
+		},
+		{
+			"name": "Kanban",
+			"level": "Intermedio",
 			"hidden": true,
 			"categoryId": 5
 		},
@@ -431,49 +486,31 @@
 			"name": "Figma",
 			"level": "Intermedio",
 			"hidden": false,
-			"categoryId": 6
-		},
-		{
-			"name": "Diseño UX/UI",
-			"level": "Intermedio",
-			"hidden": false,
-			"categoryId": 6
+			"categoryId": 5
 		},
 		{
 			"name": "Prototipado",
 			"level": "Intermedio",
-			"hidden": false,
-			"categoryId": 6
+			"hidden": true,
+			"categoryId": 5
 		},
 		{
-			"name": "Postman",
-			"level": "Intermedio",
-			"hidden": false,
-			"categoryId": null
-		},
-		{
-			"name": "VS Code",
+			"name": "Code Review",
 			"level": "Intermedio",
 			"hidden": true,
-			"categoryId": null
+			"categoryId": 5
 		},
 		{
-			"name": "Xcode",
-			"level": "Basico",
-			"hidden": true,
-			"categoryId": null
+			"name": "SOLID",
+			"level": "Intermedio",
+			"hidden": false,
+			"categoryId": 5
 		},
 		{
-			"name": "Android Studio",
-			"level": "Basico",
-			"hidden": true,
-			"categoryId": null
-		},
-		{
-			"name": "GitHub Copilot",
-			"level": "Basico",
-			"hidden": true,
-			"categoryId": null
+			"name": "Clean Code",
+			"level": "Intermedio",
+			"hidden": false,
+			"categoryId": 5
 		}
 	],
 	"languages": [
@@ -485,7 +522,7 @@
 		{
 			"name": "Inglés",
 			"logoUrl": "./assets/united-states.svg",
-			"proficiency": "Intermedio - comprensión avanzada"
+			"proficiency": "Intermedio-Avanzado"
 		},
 		{
 			"name": "Portugués",
@@ -495,7 +532,7 @@
 	],
 	"experience": [
 		{
-			"jobTitle": "Full Stack Engineer",
+			"jobTitle": "Full Stack Developer",
 			"company": "Softtek",
 			"companyDetail": "Consultoría y servicios de TI para empresas de medicina prepaga.",
 			"location": {
@@ -503,46 +540,24 @@
 				"country": "Argentina"
 			},
 			"hidden": false,
-			"start": {
-				"month": "Agosto",
-				"year": "2019"
-			},
-			"end": {
-				"month": "Julio",
-				"year": "2025"
-			},
-			"responsibilities": [
-				"Lideré la evolución técnica de plataformas de autogestión en el sector salud, con foco en estabilidad, escalabilidad y experiencia de usuario."
-			],
+			"startDate": "2019-08-05T00:00:00.000-03:00",
+			"endDate": "2025-07-31T00:00:00.000-03:00",
 			"achievements": [
-				{
-					"title": "Modernización Frontend",
-					"content": "Lideré la migración de interfaces críticas a React y TypeScript, implementando arquitectura basada en componentes, consumo de APIs REST y buenas prácticas de desarrollo frontend para mejorar la mantenibilidad y la evolución del producto."
-				},
-				{
-					"title": "Adaptación y UX",
-					"content": "Lideré la transición de aplicaciones híbridas a interfaces responsive y diseñé flujos de UX en Figma para aplicaciones móviles, mejorando la experiencia de usuario y reduciendo la fricción en procesos clave."
-				},
-				{
-					"title": "Optimización de Core Business",
-					"content": "Aseguré el mantenimiento y evolución de servicios Java EE (JBoss) y bases de datos MS SQL Server, optimizando la lógica de negocio para procesos críticos de valorización médica y scoring de afiliados."
-				},
-				{
-					"title": "Coordinación Técnica",
-					"content": "Traduje requerimientos de negocio en soluciones técnicas, realizando análisis, estimación y documentación bajo estándares de calidad (ISO), y coordinando con equipos de producto, diseño e ingeniería para asegurar entregas alineadas al usuario."
-				},
-				{
-					"title": "Seguridad e Integraciones",
-					"content": "Lideré la migración de APIs críticas bajo estándares mTLS e implementé SSL Pinning en aplicaciones móviles para asegurar la comunicación segura con sistemas externos."
-				},
-				{
-					"title": "Infraestructura y Cloud",
-					"content": "Ejecuté la contenerización de servicios de geolocalización con Docker y Kubernetes (Tanzu), asegurando despliegues estables en producción."
-				},
-				{
-					"title": "Calidad y Testing",
-					"content": "Realicé testing funcional y diseño de casos de prueba para validación de flujos críticos en aplicaciones web, asegurando la calidad de las entregas."
-				}
+				"Lideré la migración de servicios críticos para emergencias médicas hacia <b>APIs REST</b> con <b>mTLS</b>, coordinando la integración con equipos de Arquitectura, Seguridad, Infraestructura y Monitoreo.",
+				"Implementé <b>SSL Pinning</b> y gestión de estado (<b>Context API + useReducer</b>) en aplicaciones móviles (<b>Ionic/React</b>) para visitas médicas, mejorando la seguridad y mantenibilidad.",
+
+				"Desarrollé funcionalidades en una aplicación web para entrevistas a prestadores médicos, diseñando componentes reutilizables en <b>React</b> e integrando múltiples APIs mediante <b>Axios</b>.",
+
+				"Desarrollé y evolucioné servicios basados en <b>Java EE (JBoss)</b> y <b>SQL Server</b> para la gestión de precios, órdenes médicas y scoring de afiliados.",
+				"Contenericé un proceso batch de geolocalización con <b>Docker</b> y participé en la configuración de su despliegue en <b>Kubernetes (Tanzu)</b>, en conjunto con equipo de DevOps.",
+
+				"Adapté interfaces a diseño responsive y desarrollé nuevas funcionalidades en aplicación móvil (<b>Ionic/Angular</b>) para visitas a domicilio, asegurando la consistencia en distintos dispositivos.",
+				"Diseñé en <b>Figma</b> el flujo de autenticación de una aplicación para afiliados, colaborando con equipo de Producto para mejorar la experiencia de usuario.",
+
+				"Estandaricé el conocimiento del equipo mediante documentación técnica (diagramas de despliegue, colecciones <b>Postman</b>) y capacitaciones en <b>mTLS</b>, <b>Docker</b> y <b>Kubernetes</b>, facilitando el onboarding de nuevos integrantes.",
+				"Realicé análisis de factibilidad y descomposición de historias complejas en tareas ejecutables, estimando y coordinando su ejecución en entornos <b>Scrum/Kanban</b>.",
+				"Participé en <b>code reviews</b> y validé entregables con criterios de <b>testing funcional</b>, asegurando la calidad de las entregas.",
+				"Brindé soporte técnico en producción, incluyendo análisis de causa raíz y resolución de incidentes críticos."
 			],
 			"tools": [
 				"HTML5",
@@ -553,7 +568,6 @@
 				"Responsive Design",
 				"React",
 				"React Router",
-				"Redux",
 				"TypeScript",
 				"Angular",
 				"Ionic",
@@ -596,17 +610,12 @@
 				"city": "Esquel",
 				"country": "Argentina"
 			},
+			"averageGrade": "9.29",
 			"finished": false,
 			"hidden": false,
-			"status": "Finalizando requisitos de egreso / Diciembre 2026",
-			"start": {
-				"year": "2013",
-				"month": "Febrero"
-			},
-			"end": {
-				"year": "2026",
-				"month": "Diciembre"
-			}
+			"status": "En curso - Finalización estimada: Diciembre 2026",
+			"startDate": "2013-02-04T00:00:00.000-03:00",
+			"endDate": null
 		},
 		{
 			"program": "Técnico en Gestión Organizacional y Registración Contable",
@@ -615,23 +624,18 @@
 				"city": "Comodoro Rivadavia",
 				"country": "Argentina"
 			},
+			"averageGrade": "9.53",
 			"finished": true,
 			"hidden": true,
-			"status": "Finalizado en Diciembre 2012",
-			"start": {
-				"year": "2010",
-				"month": "Febrero"
-			},
-			"end": {
-				"year": "2012",
-				"month": "Diciembre"
-			}
+			"status": "Finalizado en Noviembre 2012",
+			"startDate": "2010-02-01T00:00:00.000-03:00",
+			"endDate": "2012-11-30T00:00:00.000-03:00"
 		}
 	],
 	"courses": [
 		{
 			"title": "GitHub Foundations",
-			"type": "Certificación Oficial",
+			"type": "CERTIFICACION",
 			"hours": null,
 			"institution": "GitHub",
 			"endDate": "2025-03-04T00:00:00.000-03:00",
@@ -641,9 +645,9 @@
 		},
 		{
 			"title": "AWS Certified Cloud Practitioner",
-			"type": "Certificación Oficial",
+			"type": "CERTIFICACION",
 			"hours": null,
-			"institution": "Amazon Web Services Training and Certification",
+			"institution": "AWS Training and Certification",
 			"endDate": "2023-05-09T00:00:00.000-03:00",
 			"hidden": false,
 			"badgeIcon": "https://images.credly.com/size/340x340/images/00634f82-b07f-4bbd-a6bb-53de397fc3a6/image.png",
@@ -651,7 +655,7 @@
 		},
 		{
 			"title": "Patrones de diseño + Testing",
-			"type": "Formación Técnica",
+			"type": "CURSO",
 			"hours": "7",
 			"institution": "Digital House",
 			"endDate": "2025-10-30T00:00:00.000-03:00",
@@ -661,7 +665,7 @@
 		},
 		{
 			"title": "React + Redux con TypeScript",
-			"type": "Formación Técnica",
+			"type": "CURSO",
 			"hours": "15",
 			"institution": "Digital House",
 			"endDate": "2025-07-18T00:00:00.000-03:00",
@@ -671,7 +675,7 @@
 		},
 		{
 			"title": "React JS",
-			"type": "Formación Técnica",
+			"type": "CURSO",
 			"hours": "13",
 			"institution": "Digital House",
 			"endDate": "2025-04-23T00:00:00.000-03:00",
@@ -681,7 +685,7 @@
 		},
 		{
 			"title": "GitHub Foundations Learning Path",
-			"type": "Formación Técnica",
+			"type": "CURSO",
 			"hours": "11",
 			"institution": "Microsoft",
 			"endDate": "2025-01-28T00:00:00.000-03:00",
@@ -691,17 +695,17 @@
 		},
 		{
 			"title": "Testing en Calidad de Software",
-			"type": "Formación Técnica",
+			"type": "CURSO",
 			"hours": "14",
 			"institution": "Digital House",
 			"endDate": "2024-12-20T00:00:00.000-03:00",
-			"hidden": false,
+			"hidden": true,
 			"badgeIcon": null,
 			"credentialUrl": null
 		},
 		{
 			"title": "Web Designer",
-			"type": "Formación Técnica",
+			"type": "CURSO",
 			"hours": "50",
 			"institution": "Digital House",
 			"endDate": "2024-11-21T00:00:00.000-03:00",
@@ -711,7 +715,7 @@
 		},
 		{
 			"title": "Identidad Poderosa",
-			"type": "Formación",
+			"type": "CURSO",
 			"hours": "8",
 			"institution": "Softtek",
 			"endDate": "2024-10-17T00:00:00.000-03:00",
@@ -721,7 +725,7 @@
 		},
 		{
 			"title": "Feedback",
-			"type": "Formación",
+			"type": "CURSO",
 			"hours": "3",
 			"institution": "Softtek",
 			"endDate": "2024-09-20T00:00:00.000-03:00",
@@ -731,7 +735,7 @@
 		},
 		{
 			"title": "Negociación",
-			"type": "Formación",
+			"type": "CURSO",
 			"hours": "6",
 			"institution": "Softtek",
 			"endDate": "2024-08-14T00:00:00.000-03:00",
@@ -741,7 +745,7 @@
 		},
 		{
 			"title": "Cerebro Ejecutivo",
-			"type": "Formación",
+			"type": "CURSO",
 			"hours": "24",
 			"institution": "INECO",
 			"endDate": "2024-06-26T00:00:00.000-03:00",
@@ -751,7 +755,7 @@
 		},
 		{
 			"title": "The Influencer",
-			"type": "Formación",
+			"type": "CURSO",
 			"hours": "6",
 			"institution": "Softtek",
 			"endDate": "2024-05-16T00:00:00.000-03:00",
@@ -761,7 +765,7 @@
 		},
 		{
 			"title": "Inteligencia Emocional",
-			"type": "Formación",
+			"type": "CURSO",
 			"hours": "6",
 			"institution": "Softtek",
 			"endDate": "2023-07-26T00:00:00.000-03:00",
@@ -771,7 +775,7 @@
 		},
 		{
 			"title": "Libere el Poder de las Aplicaciones Modernas con EKS",
-			"type": "Formación",
+			"type": "CURSO",
 			"hours": "2",
 			"institution": "AWS Training and Certification",
 			"endDate": "2023-07-21T00:00:00.000-03:00",
@@ -781,7 +785,7 @@
 		},
 		{
 			"title": "Herramientas de Migración hacia AWS",
-			"type": "Formación",
+			"type": "CURSO",
 			"hours": "2",
 			"institution": "AWS Training and Certification",
 			"endDate": "2023-07-14T00:00:00.000-03:00",
@@ -791,7 +795,7 @@
 		},
 		{
 			"title": "Actualice sus Políticas de Recuperación de Desastres",
-			"type": "Formación",
+			"type": "CURSO",
 			"hours": "2",
 			"institution": "AWS Training and Certification",
 			"endDate": "2023-07-07T00:00:00.000-03:00",
@@ -801,7 +805,7 @@
 		},
 		{
 			"title": "Recomendaciones para Mantener Segura su Infraestructura",
-			"type": "Formación",
+			"type": "CURSO",
 			"hours": "2",
 			"institution": "AWS Training and Certification",
 			"endDate": "2023-06-30T00:00:00.000-03:00",
@@ -811,7 +815,7 @@
 		},
 		{
 			"title": "Gestión de Costos con AWS Cost Calculator",
-			"type": "Formación",
+			"type": "CURSO",
 			"hours": "2",
 			"institution": "AWS Training and Certification",
 			"endDate": "2023-06-23T00:00:00.000-03:00",
@@ -821,17 +825,17 @@
 		},
 		{
 			"title": "Interactive Introduction to Containers and Kubernetes",
-			"type": "Formación",
+			"type": "CURSO",
 			"hours": null,
 			"institution": "KubeAcademy",
 			"endDate": "2023-04-18T00:00:00.000-03:00",
-			"hidden": true,
+			"hidden": false,
 			"badgeIcon": null,
 			"credentialUrl": null
 		},
 		{
 			"title": "AWS Partner: Accreditation (Technical)",
-			"type": "Formación",
+			"type": "CURSO",
 			"hours": null,
 			"institution": "AWS Training and Certification",
 			"endDate": "2023-04-16T00:00:00.000-03:00",
@@ -841,7 +845,7 @@
 		},
 		{
 			"title": "Getting Started with Kubernetes",
-			"type": "Formación",
+			"type": "CURSO",
 			"hours": null,
 			"institution": "KubeAcademy",
 			"endDate": "2023-04-13T00:00:00.000-03:00",
@@ -851,7 +855,7 @@
 		},
 		{
 			"title": "AWS Cloud Practitioner Essentials",
-			"type": "Formación",
+			"type": "CURSO",
 			"hours": "8",
 			"institution": "AWS Training and Certification",
 			"endDate": "2023-03-31T00:00:00.000-03:00",
@@ -861,7 +865,7 @@
 		},
 		{
 			"title": "Containers 101",
-			"type": "Formación",
+			"type": "CURSO",
 			"hours": null,
 			"institution": "KubeAcademy",
 			"endDate": "2023-03-16T00:00:00.000-03:00",
@@ -871,7 +875,7 @@
 		},
 		{
 			"title": "Kubernetes 101",
-			"type": "Formación",
+			"type": "CURSO",
 			"hours": null,
 			"institution": "KubeAcademy",
 			"endDate": "2023-03-16T00:00:00.000-03:00",
@@ -881,7 +885,7 @@
 		},
 		{
 			"title": "Introduction to Containers",
-			"type": "Formación",
+			"type": "CURSO",
 			"hours": null,
 			"institution": "AWS Training and Certification",
 			"endDate": "2023-02-14T00:00:00.000-03:00",
@@ -891,7 +895,7 @@
 		},
 		{
 			"title": "Portugués - Nivel 1",
-			"type": "Formación",
+			"type": "CURSO",
 			"hours": "39",
 			"institution": "Facultad de Agronomía de la Universidad de Buenos Aires",
 			"endDate": "2022-07-26T00:00:00.000-03:00",
@@ -1004,17 +1008,6 @@
 			"hidden": true
 		}
 	],
-	"volunteerExperience": [
-		{
-			"role": "",
-			"organization": "",
-			"startDate": "",
-			"endDate": "",
-			"description": ""
-		}
-	],
-	"awards": [],
-	"publications": [],
 	"references": [
 		{
 			"name": "",
