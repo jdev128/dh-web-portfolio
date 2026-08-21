@@ -1,6 +1,85 @@
-import data from "./info.json" with { type: "json" };
+// LANGUAGE CONFIGURATION
+
+const LANGUAGE_SPANISH = "ES";
+const LOCALE_SPANISH = "es-AR";
+
+const LANGUAGE_ENGLISH = "EN";
+const LOCALE_ENGLISH = "en-US";
+
+// Change this variable to load a different language (make sure the corresponding JSON file exists in the data folder)
+const LANGUAGE = LANGUAGE_SPANISH;
+const LOCALE = LANGUAGE === LANGUAGE_SPANISH ? LOCALE_SPANISH : LOCALE_ENGLISH;
 
 const MILLISECONDS_IN_A_YEAR = 60 * 1000 * 60 * 24 * 365;
+
+// Internationalization & SPA Navigation
+
+const LABELS = {
+	[LANGUAGE_SPANISH]: {
+		home: "Inicio",
+		skills: "Competencias",
+		projects: "Ultimos proyectos",
+		onlineCv: "Conocé mi trayectoria",
+		github: "Ver en GitHub",
+		visitDemo: "Ver online",
+		currentLocation: "Estás aquí",
+		usedTools: "Herramientas usadas",
+	},
+	[LANGUAGE_ENGLISH]: {
+		home: "Home",
+		skills: "Skills",
+		projects: "Latest projects",
+		onlineCv: "Know my career",
+		github: "View on GitHub",
+		visitDemo: "Visit demo",
+		currentLocation: "You are here",
+		usedTools: "Used tools",
+	},
+};
+
+const ROUTES = [
+	{
+		hash: "#home",
+		title: "",
+		sectionId: "hero",
+		animatedChildren: [
+			{
+				selector: "#hero-img",
+				origin: "right",
+			},
+			{
+				selector: "#hero-text",
+				origin: "left",
+			},
+		],
+	},
+	{
+		hash: "#skills",
+		title: "",
+		sectionId: "tools-and-skills",
+		animatedChildren: [
+			{
+				selector: "#tools",
+				origin: "left",
+			},
+			{
+				selector: "#skills",
+				origin: "right",
+			},
+		],
+	},
+	{
+		hash: "#projects",
+		title: "",
+		sectionId: "projects",
+		animatedChildren: [
+			{
+				selector: ".project",
+				origin: "left",
+			},
+		],
+	},
+];
 
 /* Manejo de menues para dispositivos moviles */
 
@@ -9,6 +88,19 @@ const MENU = document.getElementById("navigation-list");
 
 const TOGGLE_SOCIAL_BAR = document.getElementById("toggle-social-bar");
 const SOCIAL_BAR = document.querySelector("aside.social-media-bar ul");
+
+async function getData(language) {
+	const dataURI = `./data/info-${language}.json`;
+	try {
+		const response = await fetch(dataURI);
+		if (response.ok) {
+			const data = await response.json();
+			return data;
+		}
+	} catch (error) {
+		console.error("Error while obtaining resume data");
+	}
+}
 
 function computeTotalExperience(experience) {
 	let totalTime = experience.reduce((total, job) => {
@@ -62,7 +154,7 @@ window.addEventListener("resize", () => {
 	closeSocialBar();
 });
 
-function fillPersonalData() {
+function fillPersonalData(data) {
 	let fullName = `${data.name} ${data.surname}`;
 	document.getElementById("full-name").innerText = fullName;
 	document.getElementById("role-title").innerText = data.headline;
@@ -80,7 +172,7 @@ function fillPersonalData() {
 	document.getElementById("online-cv").href = data.onlineResume;
 }
 
-function fillProfileSummary() {
+function fillProfileSummary(data) {
 	let profileSummary = data.profileSummary[0].replace(
 		"TOTAL_EXPERIENCE",
 		computeTotalExperience(data.experience),
@@ -90,7 +182,7 @@ function fillProfileSummary() {
 
 /* Obtencion de informacion para secciones secundarias */
 
-function fillTools() {
+function fillTools(data) {
 	data.toolCategories.forEach((category) => {
 		let toolsList = data.tools
 			.filter((tool) => tool.categoryId === category.id && !tool.hidden)
@@ -106,7 +198,7 @@ function fillTools() {
 	});
 }
 
-function fillProjects() {
+function fillProjects(data) {
 	let projectsList = data.projects
 		.filter((project) => !project.hidden)
 		.map((project) => {
@@ -121,19 +213,18 @@ function fillProjects() {
 				</div>
 				<div class="content">
 					<p class="description">${project.description}</p>
-					<p class="tools">Herramientas usadas: ${project.technologies.join(", ")}</p>
+					<p class="tools">${LABELS[LANGUAGE].usedTools}: ${project.technologies.join(", ")}</p>
 				</div>
 				<div class="footer">
 					<a class="button view-repo" target="_blank" href="${
 						project.repositoryUrl
-					}">Ver en GitHub</a>
+					}">${LABELS[LANGUAGE].github}</a>
 					${
 						location.href.includes(project.url)
 							? `<span class="button disabled">
-							<span class="tooltip">Estas aqui</span>
-							Ver online
-						</span>`
-							: `<a class="button visit-demo" target="_blank" href="${project.url}">Ver online</a>`
+							<span class="tooltip">${LABELS[LANGUAGE].currentLocation}</span>
+							${LABELS[LANGUAGE].visitDemo}</span>`
+							: `<a class="button visit-demo" target="_blank" href="${project.url}">${LABELS[LANGUAGE].visitDemo}</a>`
 					}
 				</div>
 			</div>`;
@@ -141,52 +232,6 @@ function fillProjects() {
 		.join("");
 	document.getElementById("projects").innerHTML += projectsList;
 }
-
-// Manejo de navegacion SPA
-
-const ROUTES = [
-	{
-		hash: "#home",
-		title: "Inicio",
-		sectionId: "hero",
-		animatedChildren: [
-			{
-				selector: "#hero-img",
-				origin: "right",
-			},
-			{
-				selector: "#hero-text",
-				origin: "left",
-			},
-		],
-	},
-	{
-		hash: "#skills",
-		title: "Herramientas y habilidades",
-		sectionId: "tools-and-skills",
-		animatedChildren: [
-			{
-				selector: "#tools",
-				origin: "left",
-			},
-			{
-				selector: "#skills",
-				origin: "right",
-			},
-		],
-	},
-	{
-		hash: "#projects",
-		title: "Ultimos proyectos",
-		sectionId: "projects",
-		animatedChildren: [
-			{
-				selector: ".project",
-				origin: "left",
-			},
-		],
-	},
-];
 
 function handleNavigate(hash) {
 	let oldSection = document.querySelector("section.visible");
@@ -206,7 +251,7 @@ function handleNavigate(hash) {
 	window.location = hash;
 	let newRoute = ROUTES.find((route) => route.hash === hash);
 	document.getElementById(newRoute.sectionId).classList.add("visible");
-	document.title = `${data.name} ${data.surname} | ${newRoute.title}`;
+	document.title = newRoute.title;
 
 	newRoute.animatedChildren.forEach((child) => {
 		ScrollReveal().reveal(child.selector, { origin: child.origin });
@@ -217,8 +262,13 @@ function handleNavigate(hash) {
 	scrollToTop();
 }
 
-const initLocation = () => {
+const initNavigation = (data) => {
 	let currentHash = window.location.hash;
+
+	ROUTES.forEach((route) => {
+		route.title = `${data.name} ${data.surname} | ${LABELS[LANGUAGE][route.hash.substring(1)]}`;
+	});
+
 	if (currentHash === "") {
 		handleNavigate("#home");
 	} else {
@@ -229,15 +279,31 @@ const initLocation = () => {
 document.getElementById("home-link").addEventListener("click", () => {
 	handleNavigate("#home");
 });
+
+document.getElementById("skills-link").innerText = LABELS[LANGUAGE].skills;
 document.getElementById("skills-link").addEventListener("click", () => {
 	handleNavigate("#skills");
 });
+
+document.getElementById("projects-link").innerText = LABELS[LANGUAGE].projects;
 document.getElementById("projects-link").addEventListener("click", () => {
 	handleNavigate("#projects");
 });
 
-document.addEventListener("DOMContentLoaded", fillPersonalData);
-document.addEventListener("DOMContentLoaded", fillProfileSummary);
-document.addEventListener("DOMContentLoaded", fillTools);
-document.addEventListener("DOMContentLoaded", fillProjects);
-document.addEventListener("DOMContentLoaded", initLocation);
+document.getElementById("online-cv").innerText = LABELS[LANGUAGE].onlineCv;
+
+function fillPage() {
+	getData(LANGUAGE)
+		.then((data) => {
+			initNavigation(data);
+			fillPersonalData(data);
+			fillProfileSummary(data);
+			fillTools(data);
+			fillProjects(data);
+		})
+		.catch((error) =>
+			console.error("Error while populating resume sections"),
+		);
+}
+
+document.addEventListener("DOMContentLoaded", fillPage);
