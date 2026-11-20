@@ -1080,18 +1080,16 @@
 	"projects": [
 		{
 			"title": "Agenda Andina",
-			"description": "Plataforma web de gestión y agenda de eventos culturales. Prototipado en Figma (web y mobile), definición de contratos de APIs REST en Postman, diseño y desarrollo en React y priorización de backlog por valor de negocio.",
+			"description": "Plataforma web de gestión y agenda de eventos culturales.",
 			"technologies": [
 				"React",
 				"TypeScript",
 				"Tailwind CSS",
 				"shadcn/ui",
 				"Vite",
-				"Supabase",
 				"RESTful APIs",
 				"Figma",
-				"Postman",
-				"Responsive Design"
+				"Postman"
 			],
 			"url": "https://organizadores-agendaandina.netlify.app/",
 			"repositoryUrl": "https://github.com/jdev128/AgendaAndinaOrganizadores",
